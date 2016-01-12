@@ -25,6 +25,7 @@ Adafruit_STMPE610 ts = Adafruit_STMPE610(STMPE_CS);
 #define TS_MINY 330
 #define TS_MAXX 3550
 #define TS_MAXY 3750
+#define VERSION "MIDIStick 0.3.7"
 Adafruit_ILI9341 tft = Adafruit_ILI9341(TFT_CS, TFT_DC);
 
 // Controls flow speed of MIDI messages
@@ -108,7 +109,7 @@ void changeMode(void) {
       tft.println("4-Way S Mode");
       tft.setTextSize(1);
       tft.setCursor(220, 0);
-      tft.println("MIDIStick 0.3.5");
+      tft.println(VERSION);
       tft.fillCircle(20, 220, 17, ILI9341_WHITE);
       tft.setCursor(7, 216);
       tft.setTextColor(ILI9341_BLACK);
@@ -127,7 +128,7 @@ void changeMode(void) {
       tft.println("4-Way F Mode");
       tft.setTextSize(1);
       tft.setCursor(220, 0);
-      tft.println("MIDIStick 0.3.5");
+      tft.println(VERSION);
       tft.fillCircle(20, 220, 17, ILI9341_WHITE);
       tft.setCursor(7, 216);
       tft.setTextColor(ILI9341_BLACK);
@@ -145,7 +146,7 @@ void changeMode(void) {
       tft.println("2-Way S Mode");
       tft.setTextSize(1);
       tft.setCursor(220, 0);
-      tft.println("MIDIStick 0.3.5");
+      tft.println(VERSION);
       tft.fillCircle(20, 220, 17, ILI9341_WHITE);
       tft.setCursor(7, 216);
       tft.setTextColor(ILI9341_BLACK);
@@ -164,7 +165,7 @@ void changeMode(void) {
       tft.println("2-Way F Mode");
       tft.setTextSize(1);
       tft.setCursor(220, 0);
-      tft.println("MIDIStick 0.3.5");
+      tft.println(VERSION);
       tft.fillCircle(20, 220, 17, ILI9341_WHITE);
       tft.setCursor(7, 216);
       tft.setTextColor(ILI9341_BLACK);
