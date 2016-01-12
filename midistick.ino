@@ -21,10 +21,10 @@ Adafruit_STMPE610 ts = Adafruit_STMPE610(STMPE_CS);
 // The display also uses hardware SPI, plus #9 & #10
 #define TFT_CS 10
 #define TFT_DC 9
-#define TS_MINX 150
-#define TS_MINY 130
-#define TS_MAXX 3800
-#define TS_MAXY 4000
+#define TS_MINX 450
+#define TS_MINY 330
+#define TS_MAXX 3550
+#define TS_MAXY 3750
 Adafruit_ILI9341 tft = Adafruit_ILI9341(TFT_CS, TFT_DC);
 
 // Controls flow speed of MIDI messages
@@ -256,9 +256,9 @@ void loop()
 
   if (controlState == 1) {
     if (buttonState == 1 || buttonState == 2) {
-      int midiX = map(p.x, TS_MINX, 2000, 0, 254);
+      int midiX = map(p.x, TS_MINX, TS_MAXX, 0, 254);
       midiX = constrain(midiX, 0, 254);
-      int midiY = map(p.y, TS_MINY, 2200, 0, 254);
+      int midiY = map(p.y, TS_MINY, TS_MAXX, 0, 254);
       midiY = constrain(midiY, 0, 254);
 
       if (midiX < 128) {
@@ -280,9 +280,9 @@ void loop()
       }
     }
     else {
-      int midiX = map(p.x, TS_MINX, 3000, 0, MIDI_MAX);
+      int midiX = map(p.x, TS_MINX, TS_MAXX, 0, MIDI_MAX);
       midiX = constrain(midiX, 0, MIDI_MAX);
-      int midiY = map(p.y, TS_MINY, 3200, 0, MIDI_MAX);
+      int midiY = map(p.y, TS_MINY, TS_MAXY, 0, MIDI_MAX);
       midiY = constrain(midiY, 0, MIDI_MAX);
 
       nv1 = midiX;
